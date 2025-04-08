@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People - Mindspace Architects</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #4a4a4a;
+    background-color: #ffffff;
+}
+
+.nav-item {
+    position: relative;
+    cursor: pointer;
+    margin: 0 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-item::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    bottom: 0;
+    width: 2px;
+    height: 0;
+    background-color: #333;
+    transition: height 0.3s ease;
+}
+
+.nav-item:hover::before,
+.nav-item.active::before {
+    height: 100%;
+}
+
+.nav-item.active {
+    color: #333;
+    font-weight: 500;
+}
+        
+        .main-content {
+            flex: 1;
+        }
+        
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 640px) {
+            .people-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .people-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .people-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .team-member {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: scale(1.02);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.75rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover .member-info {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4">
+    <header class="flex justify-between items-center py-6">
+        <div class="logo">
+            <a href="#"><img src="../assets/images/logo.jpg" alt="Ravi Kumbham Architects Logo" class="h-10"></a>
+        </div>
+        <nav class="hidden md:flex">
+            <a href="../index.html" class="nav-item">home</a>
+            <a href="#" class="nav-item">completed projects</a>
+            <a href="#" class="nav-item">about</a>
+            <a href="#" class="nav-item">blog</a>
+            <a href="#" class="nav-item">instagram</a>
+            <a href="#" class="nav-item active">people</a>
+        </nav>
+        <div class="md:hidden">
+            <button id="mobile-menu-btn" class="focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+        <div class="flex flex-col items-center py-4">
+            <a href="#" class="nav-item py-2">home</a>
+            <a href="#" class="nav-item py-2">completed projects</a>
+            <a href="#" class="nav-item py-2">about</a>
+            <a href="#" class="nav-item py-2">blog</a>
+            <a href="#" class="nav-item py-2">instagram</a>
+            <a href="#" class="nav-item py-2">people</a>
+        </div>
+    </div>
+    
+    <div class="main-content px-4 md:px-12 py-6">
+        <div class="people-grid">
+            <!-- Team members will be dynamically added here -->
+        </div>
+    </div>
+    
+    <footer class="mt-auto py-6 px-4 md:px-12 text-center text-gray-500 border-t border-gray-200">
+        <p>&copy; 2025 RAVI KHUMBHAM Architects. All rights reserved.</p>
+    </footer>
+</div>
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+        // Team members data
+        const teamMembers = [
+            {
+                name: "Ravi Kumbham",
+                position: "Principal Architect",
+                image: "../assets/images/people/people.jpg"
+            },
+            {
+                name: "SINDHURA",
+                position: "Senior Architect",
+                image: "../assets/images/people/people.jpg"
+            },
+            {
+                name: "People",
+                position: "Senior Architect",
+                image: "../assets/images/people/people.jpg"
+            },
+            {
+                name: "People",
+                position: "Senior Architect",
+                image: "../assets/images/people/people.jpg"
+            },
+            {
+                name: "People",
+                position: "Senior Architect",
+                image: "../assets/images/people/people.jpg"
+            },
+            {
+                name: "People",
+                position: "Senior Architect",
+                image: "../assets/images/people/people.jpg"
+            },
+            {
+                name: "People",
+                position: "Senior Architect",
+                image: "../assets/images/people/people.jpg"
+            },
+        ];
+        
+        // Populate team members grid
+        const peopleGrid = document.querySelector('.people-grid');
+        
+        teamMembers.forEach(member => {
+            const memberElement = document.createElement('div');
+            memberElement.className = 'team-member';
+            
+            memberElement.innerHTML = `
+                <img src="${member.image}" alt="${member.name}">
+                <div class="member-info">
+                    <h3 class="text-lg font-semibold">${member.name}</h3>
+                    <p class="text-sm text-gray-600">${member.position}</p>
+                </div>
+            `;
+            
+            peopleGrid.appendChild(memberElement);
+        });
+
+        // In a real implementation, replace placeholder images with actual paths
+        // For example:
+        // const actualImagePath = "assets/images/" + member.name.toLowerCase().replace(/ /g, "-") + ".jpg";
+    </script>
+</body>
+</html>

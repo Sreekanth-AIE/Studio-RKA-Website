@@ -3,123 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mindspace Architects</title>
+    <title>Ravi Kumbham Architects</title>
+    <link rel="icon" href="./assets/images/logo.jpg" sizes="32x32">
+    <link rel="icon" href="./assets/images/logo.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" href="./assets/images/logo.jpg">
+    <!-- <meta name="msapplication-TileImage" content="https://mindspacearchitects.com/wp-content/uploads/2025/01/cropped-cropped-logo.png"> -->
+    <meta name="description" content="Ravi Kumbham Architects - Innovative architectural designs and solutions. Explore our portfolio of completed projects.">
+    <meta name="keywords" content="architecture, design, projects, Ravi Kumbham Architects">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #4a4a4a;
-            background-color: #ffffff;
-        }
-        
-        .nav-item {
-            position: relative;
-            cursor: pointer;
-            margin: 0 15px;
-            color: #333;
-            text-decoration: none;
-        }
-        
-        .nav-item::before {
-            content: "";
-            position: absolute;
-            left: -5px;
-            top: 0;
-            width: 2px;
-            height: 0;
-            background-color: #333;
-            transition: height 0.3s ease;
-        }
-        
-        .nav-item:hover::before {
-            height: 100%;
-        }
-        
-        .main-heading {
-            color: #6e706f;
-            font-weight: 400;
-        }
-        
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            background-color: #f9f9f9;
-        }
-        
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease;
-            height: 100%;
-        }
-        
-        .carousel-image {
-            min-width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
-        
-        .carousel-indicators {
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-        }
-        
-        .indicator {
-            height: 2px;
-            margin: 0 3px;
-            background-color: #ccc;
-            position: relative;
-            transition: width 0.3s ease;
-        }
-        
-        .indicator-progress {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 0%;
-            background-color: #333;
-            transition: width 4s linear;
-        }
-        
-        .indicator.active {
-            width: 50px;
-        }
-        
-        .indicator:not(.active) {
-            width: 20px;
-        }
-        
-        .logo {
-            max-width: 80px;
-        }
-        
-        footer {
-            border-top: 1px solid #eaeaea;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-    </style>
+    <link href="./assets/css/main.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.min.js" defer></script>
+  
 </head>
 <body>
     <div class="container mx-auto px-4">
-        <!-- Header -->
+        <!-- Header with Alpine.js for mobile menu -->
         <header class="flex justify-between items-center py-6">
             <div class="logo">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M30,30 C40,10 60,40 75,25" stroke="#333" stroke-width="3" fill="none"/>
-                </svg>
+                <a href="#"><img src="./assets/images/logo.jpg" alt="Ravi Kumbham Architects Logo" class="h-10"></a>
             </div>
             <nav class="hidden md:flex">
-                <a href="#" class="nav-item">home</a>
+                <a href="#" class="nav-item active">home</a>
                 <a href="#" class="nav-item">completed projects</a>
                 <a href="#" class="nav-item">about</a>
                 <a href="#" class="nav-item">blog</a>
                 <a href="#" class="nav-item">instagram</a>
-                <a href="#" class="nav-item">people</a>
+                <a href="./pages/people.html" class="nav-item">people</a>
             </nav>
             <div class="md:hidden">
                 <button id="mobile-menu-btn" class="focus:outline-none">
@@ -141,20 +50,16 @@
                 <a href="#" class="nav-item py-2">people</a>
             </div>
         </div>
-        
+
         <!-- Main Heading -->
         <div class="text-center py-8">
-            <h1 class="main-heading text-4xl md:text-5xl">Mindspace Architects</h1>
+            <h1 class="main-heading text-4xl md:text-5xl">Ravi Kumbham Architects</h1>
         </div>
         
         <!-- Carousel -->
         <div class="carousel-container mt-4">
             <div id="carousel" class="carousel">
-                <img src="/api/placeholder/1200/800" alt="Architecture sketch" class="carousel-image">
-                <img src="/api/placeholder/1200/800" alt="Architecture design" class="carousel-image">
-                <img src="/api/placeholder/1200/800" alt="Building concept" class="carousel-image">
-                <img src="/api/placeholder/1200/800" alt="Modern architecture" class="carousel-image">
-                <img src="/api/placeholder/1200/800" alt="Interior design" class="carousel-image">
+                <!-- Images will be loaded dynamically via JavaScript -->
             </div>
             <div class="carousel-indicators mt-6">
                 <!-- Indicators will be generated by JavaScript -->
@@ -168,218 +73,10 @@
                 <a href="#" class="hover:text-gray-700">Privacy Policy</a>
                 <a href="#" class="hover:text-gray-700">Terms</a>
             </div>
-            <p>© 2025 Mindspace Architects. All rights reserved.</p>
+            <p>© 2025 Ravi Kumbham Architects. All rights reserved.</p>
         </footer>
     </div>
     
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Carousel functionality
-        const carousel = document.getElementById('carousel');
-        const images = carousel.querySelectorAll('.carousel-image');
-        const indicatorsContainer = document.querySelector('.carousel-indicators');
-        
-        let currentIndex = 0;
-        let startX, moveX;
-        let intervalId;
-        const autoplayDuration = 4000; // 4 seconds per slide
-        
-        // Create indicators based on the number of images
-        images.forEach((_, index) => {
-            const indicator = document.createElement('div');
-            indicator.classList.add('indicator');
-            
-            // Create progress bar inside indicator
-            const progress = document.createElement('div');
-            progress.classList.add('indicator-progress');
-            indicator.appendChild(progress);
-            
-            if (index === 0) {
-                indicator.classList.add('active');
-            }
-            
-            indicatorsContainer.appendChild(indicator);
-            
-            // Add click event to indicators
-            indicator.addEventListener('click', () => {
-                goToSlide(index);
-            });
-        });
-        
-        const indicators = document.querySelectorAll('.indicator');
-        const progressBars = document.querySelectorAll('.indicator-progress');
-        
-        function goToSlide(index) {
-            if (intervalId) {
-                clearInterval(intervalId);
-            }
-            
-            // Reset all progress bars
-            progressBars.forEach(bar => {
-                bar.style.width = '0%';
-            });
-            
-            // Remove active class from all indicators
-            indicators.forEach(ind => {
-                ind.classList.remove('active');
-            });
-            
-            // Add active class to current indicator
-            indicators[index].classList.add('active');
-            
-            // Move carousel
-            carousel.style.transform = `translateX(-${index * 100}%)`;
-            currentIndex = index;
-            
-            // Animate progress bar for current slide
-            progressBars[currentIndex].style.width = '100%';
-            
-            // Restart autoplay
-            startAutoplay();
-        }
-        
-        function nextSlide() {
-            const newIndex = (currentIndex + 1) % images.length;
-            goToSlide(newIndex);
-        }
-        
-        function prevSlide() {
-            const newIndex = (currentIndex - 1 + images.length) % images.length;
-            goToSlide(newIndex);
-        }
-        
-        function startAutoplay() {
-            if (intervalId) {
-                clearInterval(intervalId);
-            }
-            
-            // Reset current progress bar
-            progressBars[currentIndex].style.width = '0%';
-            
-            // Force repaint to restart animation
-            void progressBars[currentIndex].offsetWidth;
-            
-            // Start progress animation
-            progressBars[currentIndex].style.width = '100%';
-            
-            intervalId = setInterval(() => {
-                nextSlide();
-            }, autoplayDuration);
-        }
-        
-        // Touch events for mobile swiping
-        carousel.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            if (intervalId) {
-                clearInterval(intervalId);
-            }
-        });
-        
-        carousel.addEventListener('touchmove', (e) => {
-            if (!startX) return;
-            
-            moveX = e.touches[0].clientX;
-            const diff = startX - moveX;
-            
-            // Prevent overscrolling
-            if ((currentIndex === 0 && diff < 0) || 
-                (currentIndex === images.length - 1 && diff > 0)) {
-                return;
-            }
-            
-            const translateX = -currentIndex * 100 - (diff / carousel.offsetWidth) * 100;
-            carousel.style.transform = `translateX(${translateX}%)`;
-        });
-        
-        carousel.addEventListener('touchend', (e) => {
-            if (!startX || !moveX) return;
-            
-            const diff = startX - moveX;
-            
-            if (Math.abs(diff) > 50) {
-                if (diff > 0) {
-                    nextSlide();
-                } else {
-                    prevSlide();
-                }
-            } else {
-                // Return to current slide if swipe wasn't far enough
-                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-            }
-            
-            startX = null;
-            moveX = null;
-            startAutoplay();
-        });
-        
-        // Mouse events for desktop dragging
-        let isDragging = false;
-        
-        carousel.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.clientX;
-            carousel.style.cursor = 'grabbing';
-            if (intervalId) {
-                clearInterval(intervalId);
-            }
-            e.preventDefault();
-        });
-        
-        document.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            
-            moveX = e.clientX;
-            const diff = startX - moveX;
-            
-            // Prevent overscrolling
-            if ((currentIndex === 0 && diff < 0) || 
-                (currentIndex === images.length - 1 && diff > 0)) {
-                return;
-            }
-            
-            const translateX = -currentIndex * 100 - (diff / carousel.offsetWidth) * 100;
-            carousel.style.transform = `translateX(${translateX}%)`;
-        });
-        
-        document.addEventListener('mouseup', (e) => {
-            if (!isDragging) return;
-            
-            isDragging = false;
-            carousel.style.cursor = 'grab';
-            
-            if (startX && moveX) {
-                const diff = startX - moveX;
-                
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) {
-                        nextSlide();
-                    } else {
-                        prevSlide();
-                    }
-                } else {
-                    // Return to current slide if drag wasn't far enough
-                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
-            }
-            
-            startX = null;
-            moveX = null;
-            startAutoplay();
-        });
-        
-        // Start the carousel
-        document.addEventListener('DOMContentLoaded', () => {
-            // Start with first slide
-            goToSlide(0);
-            
-            // Make carousel draggable
-            carousel.style.cursor = 'grab';
-        });
-    </script>
+    <script src="./assets/js/main.js" defer></script>
 </body>
 </html>

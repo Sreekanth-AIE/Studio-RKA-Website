@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #4a4a4a;
+    background-color: #ffffff;
+}
+
+.nav-item {
+    position: relative;
+    cursor: pointer;
+    margin: 0 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-item::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    bottom: 0;
+    width: 2px;
+    height: 0;
+    background-color: #333;
+    transition: height 0.3s ease;
+}
+
+.nav-item:hover::before,
+.nav-item.active::before {
+    height: 100%;
+}
+
+.nav-item.active {
+    color: #333;
+    font-weight: 500;
+}
+
+.main-heading {
+    color: #6e706f;
+    font-weight: 400;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 90%;
+}
+
+.carousel-image {
+    min-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.indicator {
+    height: 3px;
+    margin: 0 3px;
+    background-color: #ccc;
+    position: relative;
+    transition: width 0.3s ease;
+}
+
+.indicator-progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #333;
+    transition: width 4s linear;
+}
+
+.indicator.active {
+    width: 80px;
+}
+
+.indicator:not(.active) {
+    width: 40px;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+.logo img {
+    max-height: 80px;
+    width: auto;
+}
+
+footer {
+    border-top: 1px solid #eaeaea;
+    padding: 20px 0;
+    margin-top: 40px;
+}
