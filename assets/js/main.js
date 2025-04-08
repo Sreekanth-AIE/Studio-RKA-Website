@@ -65,10 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // For this example, we'll return sample paths
         return [
-            './assets/images/completedProjects/image1.jpg',
-            './assets/images/completedProjects/image2.jpg',
-            './assets/images/completedProjects/image3.jpg',
-            './assets/images/completedProjects/image4.jpg',
+            './assets/images/completedProjects/image1.png',
+            './assets/images/completedProjects/image2.png',
+            './assets/images/completedProjects/image3.png',
+            './assets/images/completedProjects/image4.jpeg',
             './assets/images/homepage/image5.jpg'
         ];
     }
